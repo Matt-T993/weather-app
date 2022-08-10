@@ -9,11 +9,6 @@ function App() {
 
   const formatDate = Moment().format("MMMM Do YYYY");
 
-  // const code = {
-  //   key: "9fdc425d5bbccdd4ec68f66ab6ee47ef",
-  //   base: "https://api.openweathermap.org/data/2.5/",
-  // };
-
   const url = `${process.env.REACT_APP_BASE}weather?q=${location}&units=metric&appid=${process.env.REACT_APP_KEY}`;
 
   const searchLocation = (event) => {
