@@ -2,21 +2,29 @@ import "./App.css";
 import axios from "axios";
 import { useState } from "react";
 import Moment from "moment";
+import Forecast from "./components/Forecast";
 
 function App() {
   const [data, setData] = useState({});
+  const [forecast, setForecast] = useState({});
   const [location, setLocation] = useState("");
 
   const formatDate = Moment().format("MMMM Do YYYY");
 
-  const url = `${process.env.REACT_APP_BASE}weather?q=${location}&units=metric&appid=${process.env.REACT_APP_KEY}`;
+  const currentWeatherUrl = `${process.env.REACT_APP_BASE}weather?q=${location}&units=metric&appid=${process.env.REACT_APP_KEY}`;
+  const forcastWeatherUrl = `${process.env.REACT_APP_BASE}forecast?q=${location}&units=metric&appid=${process.env.REACT_APP_KEY}`;
 
   const searchLocation = (event) => {
     if (event.key === "Enter") {
-      axios.get(url).then((response) => {
+      axios.get(currentWeatherUrl).then((response) => {
         setData(response.data);
-        console.log(response.data);
+        console.log("weather", response.data);
       });
+      axios.get(forcastWeatherUrl).then((response) => {
+        setForecast(response.data);
+        console.log("forecast", response.data);
+      });
+
       setLocation("");
     }
   };
@@ -52,16 +60,19 @@ function App() {
           {data.main ? (
             <h1 className="temp">{data.main.temp.toFixed()}°C</h1>
           ) : null}
-          {data.weather ? <p>{data.weather[0].main}</p> : null}
+          {data.weather ? <p>{data.weather[0].description}</p> : null}
+          {data.weather ? (
+            <img
+              alt="weather"
+              className="weather-icon"
+              src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+            />
+          ) : null}
           {data.main ? (
             <p>Feels like {data.main.feels_like.toFixed()}°C</p>
           ) : null}
         </div>
         <div className="bottom">
-          {/* <div className="description">
-            {data.weather ? <h1>{data.weather[0].description}</h1> : null}
-          </div> */}
-
           <div className="extra">
             <div className="humidity">
               {data.main ? <p>Humidity: {data.main.humidity}%</p> : null}
@@ -72,6 +83,7 @@ function App() {
           </div>
         </div>
       </div>
+      <div className="forecast">{forecast && <Forecast data={forecast} />}</div>
     </div>
   );
 }
