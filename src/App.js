@@ -1,19 +1,22 @@
 import "./App.css";
 import axios from "axios";
 import { useState } from "react";
-import Moment from "moment";
+import SearchBar from "./components/SearchBar";
+
 import Forecast from "./components/Forecast";
+import Weather from "./components/Weather";
 
 function App() {
+  const [show, setShow] = useState(true);
   const [data, setData] = useState({});
   const [forecast, setForecast] = useState({});
   const [location, setLocation] = useState("");
 
-  const formatDate = Moment().format("MMMM Do YYYY");
-
+  // forecast and weather URL
   const currentWeatherUrl = `${process.env.REACT_APP_BASE}weather?q=${location}&units=metric&appid=${process.env.REACT_APP_KEY}`;
   const forcastWeatherUrl = `${process.env.REACT_APP_BASE}forecast?q=${location}&units=metric&appid=${process.env.REACT_APP_KEY}`;
 
+  // get the currentweather and forecast of the location
   const searchLocation = (event) => {
     if (event.key === "Enter") {
       axios.get(currentWeatherUrl).then((response) => {
@@ -38,52 +41,19 @@ function App() {
           : "app"
       }
     >
-      <h1 className="title">Weather App</h1>
-      <div className="search">
-        <input
-          className="search-bar"
-          placeholder="Enter Location"
-          type="text"
-          value={location}
-          onChange={(event) => setLocation(event.target.value)}
-          onKeyPress={searchLocation}
-        />
-      </div>
+      <button onClick={() => setShow(true)}> Today's Weather</button>
+      <button onClick={() => setShow(false)}>Forecast</button>
       <div className="wrapper">
-        <div className="top">
-          <h1>Today's Weather</h1>
-          <p>{formatDate}</p>
-        </div>
+        <SearchBar
+          location={location}
+          setLocation={setLocation}
+          search={searchLocation}
+        />
         <hr />
-        <div className="temperture">
-          <h2>{data.name}</h2>
-          {data.main ? (
-            <h1 className="temp">{data.main.temp.toFixed()}°C</h1>
-          ) : null}
-          {data.weather ? <p>{data.weather[0].description}</p> : null}
-          {data.weather ? (
-            <img
-              alt="weather"
-              className="weather-icon"
-              src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
-            />
-          ) : null}
-          {data.main ? (
-            <p>Feels like {data.main.feels_like.toFixed()}°C</p>
-          ) : null}
-        </div>
-        <div className="bottom">
-          <div className="extra">
-            <div className="humidity">
-              {data.main ? <p>Humidity: {data.main.humidity}%</p> : null}
-            </div>
-            {data.wind ? (
-              <div className="wind">Wind: {data.wind.speed.toFixed()}km/h</div>
-            ) : null}
-          </div>
-        </div>
+        {show
+          ? data && <Weather data={data} />
+          : forecast && <Forecast data={forecast} />}
       </div>
-      <div className="forecast">{forecast && <Forecast data={forecast} />}</div>
     </div>
   );
 }
