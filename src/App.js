@@ -41,8 +41,6 @@ function App() {
           : "app"
       }
     >
-      <button onClick={() => setShow(true)}> Today's Weather</button>
-      <button onClick={() => setShow(false)}>Forecast</button>
       <div className="wrapper">
         <SearchBar
           location={location}
@@ -50,6 +48,12 @@ function App() {
           search={searchLocation}
         />
         <hr />
+        {data.main ? (
+          <div className="button">
+            <button onClick={() => setShow(true)}> Today's Weather</button>
+            <button onClick={() => setShow(false)}>Weekly Forecast</button>
+          </div>
+        ) : null}
         {show
           ? data && <Weather data={data} />
           : forecast && <Forecast data={forecast} />}

@@ -1,9 +1,8 @@
 import React from "react";
-import Moment from "moment";
+
 import "../App.css";
 
 const Weather = ({ data }) => {
-  const formatDate = Moment().format("MMMM Do YYYY");
   return (
     <>
       <div className="temperture">
@@ -29,7 +28,7 @@ const Weather = ({ data }) => {
             {data.main ? <p>Humidity: {data.main.humidity}%</p> : null}
           </div>
           {data.wind ? (
-            <div className="wind">Wind: {data.wind.speed.toFixed()}km/h</div>
+            <div className="wind">Wind: {data.wind.speed.toFixed()}m/s</div>
           ) : null}
         </div>
       </div>
