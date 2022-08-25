@@ -3,7 +3,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
-import "../App.css";
+import "./forecast.css";
 
 const WEEK_DAYS = [
   "Monday",
@@ -54,7 +54,7 @@ const Forecast = ({ data }) => {
                       </div>
                       <div className="daily-details-item">
                         <label>Humidity:</label>
-                        <label>{item.main.humidity}</label>
+                        <label>{item.main.humidity}%</label>
                       </div>
                       <div className="daily-details-item">
                         <label>Clouds:</label>

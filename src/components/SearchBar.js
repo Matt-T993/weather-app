@@ -6,7 +6,7 @@ const SearchBar = ({ location, search, setLocation }) => {
   return (
     <>
       <div className="top">
-        <p>Today's Weather</p>
+        <p>{formatDate}</p>
         <input
           className="search-bar"
           placeholder="Enter Location"
@@ -15,7 +15,6 @@ const SearchBar = ({ location, search, setLocation }) => {
           onChange={(event) => setLocation(event.target.value)}
           onKeyPress={search}
         />
-        <p>{formatDate}</p>
       </div>
     </>
   );

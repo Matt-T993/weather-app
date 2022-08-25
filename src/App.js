@@ -3,8 +3,8 @@ import axios from "axios";
 import { useState } from "react";
 import SearchBar from "./components/SearchBar";
 
-import Forecast from "./components/Forecast";
-import Weather from "./components/Weather";
+import Forecast from "./components/forecast/Forecast";
+import Weather from "./components/weather/Weather";
 
 function App() {
   const [show, setShow] = useState(true);
@@ -46,12 +46,17 @@ function App() {
           location={location}
           setLocation={setLocation}
           search={searchLocation}
+          data={data}
         />
         <hr />
         {data.main ? (
           <div className="button">
-            <button onClick={() => setShow(true)}> Today's Weather</button>
-            <button onClick={() => setShow(false)}>Weekly Forecast</button>
+            <button className="btn" onClick={() => setShow(true)}>
+              Today's Weather
+            </button>
+            <button className="btn" onClick={() => setShow(false)}>
+              Daily Forecast
+            </button>
           </div>
         ) : null}
         {show
