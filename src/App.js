@@ -2,9 +2,9 @@ import "./App.css";
 import axios from "axios";
 import { useState } from "react";
 import SearchBar from "./components/SearchBar";
-
 import Forecast from "./components/forecast/Forecast";
 import Weather from "./components/weather/Weather";
+import Button from "./components/Button";
 
 function App() {
   const [show, setShow] = useState(true);
@@ -48,17 +48,8 @@ function App() {
           search={searchLocation}
           data={data}
         />
-        <hr />
-        {data.main ? (
-          <div className="button">
-            <button className="btn" onClick={() => setShow(true)}>
-              Today's Weather
-            </button>
-            <button className="btn" onClick={() => setShow(false)}>
-              Daily Forecast
-            </button>
-          </div>
-        ) : null}
+
+        <Button data={data} setShow={setShow} />
         {show
           ? data && <Weather data={data} />
           : forecast && <Forecast data={forecast} />}

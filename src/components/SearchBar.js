@@ -16,6 +16,7 @@ const SearchBar = ({ location, search, setLocation }) => {
           onKeyPress={search}
         />
       </div>
+      <hr />
     </>
   );
 };
