@@ -1,5 +1,5 @@
 # Weather App
-**To run the application**
+**To run the application**<br>
 npm start
 
 **Demo- Deployed over Netlify**
