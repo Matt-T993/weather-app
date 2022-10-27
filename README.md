@@ -1,10 +1,10 @@
 # Weather App
 
 
-# Demo- Deployed over Netlify
+** Demo- Deployed over Netlify**
 
-# APIs Used
-https://openweathermap.org/
-https://openweathermap.org/current
+** APIs Used**
+  https://openweathermap.org/
+  https://openweathermap.org/current
 
 
