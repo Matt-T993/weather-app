@@ -3,8 +3,8 @@
 
 **Demo- Deployed over Netlify**
 
-**APIs Used**
-  https://openweathermap.org/
+**APIs Used**<br>
+  https://openweathermap.org/<br>
   https://openweathermap.org/current
 
 
