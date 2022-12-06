@@ -1,14 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
-import SearchBar from "./components/SearchBar";
-import Forecast from "./components/forecast/Forecast";
-import Weather from "./components/weather/Weather";
-import Button from "./components/Button";
+import SearchBar from "../components/SearchBar";
+import Forecast from "../components/forecast/Forecast";
+import Weather from "../components/weather/Weather";
+import Button from "../components/Button";
 
-const Location = () => {
+const Location = (data, setData, forecast, setForecast) => {
   const [show, setShow] = useState(true);
-  const [data, setData] = useState({});
-  const [forecast, setForecast] = useState({});
   const [location, setLocation] = useState("");
 
   // forecast and weather URL
