@@ -4,25 +4,34 @@ import Home from "./pages/Home";
 
 import Location from "./pages/Location";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
   const [data, setData] = useState({});
   const [forecast, setForecast] = useState({});
 
   return (
-    <div>
+    <div
+      className={
+        typeof data.main != "undefined"
+          ? data.main.temp > 16
+            ? "app warm"
+            : "app cold"
+          : "app"
+      }
+    >
       <BrowserRouter>
+        <Sidebar />
         <Routes>
+          <Route exact path="/" element={<Home />} />
           <Route
-            exact
-            path="/"
+            path="/location"
             element={<Location />}
             data={data}
             setData={setData}
             forecast={forecast}
             setForecast={setForecast}
           />
-          <Route path="location" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </div>

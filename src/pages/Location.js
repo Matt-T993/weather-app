@@ -29,15 +29,7 @@ const Location = (data, setData, forecast, setForecast) => {
     }
   };
   return (
-    <div
-      className={
-        typeof data.main != "undefined"
-          ? data.main.temp > 16
-            ? "app warm"
-            : "app cold"
-          : "app"
-      }
-    >
+    <>
       <div className="wrapper">
         <SearchBar
           location={location}
@@ -51,7 +43,7 @@ const Location = (data, setData, forecast, setForecast) => {
           ? data && <Weather data={data} />
           : forecast && <Forecast data={forecast} />}
       </div>
-    </div>
+    </>
   );
 };
 

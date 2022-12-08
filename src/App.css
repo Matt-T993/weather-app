@@ -4,9 +4,8 @@
   padding-right: 10px;
   padding-left: 10px;
   min-height: 100vh;
+  width: auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   background: url("./assets/background.png") no-repeat center center/cover;
 }
 
