@@ -3,10 +3,12 @@
   margin-left: auto;
   padding-right: 10px;
   padding-left: 10px;
+  padding-top: 10px;
   min-height: 100vh;
   width: auto;
   display: flex;
   flex-direction: column;
+
   background: url("./assets/background.png") no-repeat center center/cover;
 }
 
@@ -18,55 +20,44 @@
   background: url("./assets/cold.png") no-repeat center center/cover;
 }
 
-.wrapper {
+.container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
 }
 
-@media only screen and (min-width: 960px) {
-  .wrapper {
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .wrapper {
-    width: 50%;
-  }
-}
-.top {
-  margin-top: 20px;
+.searchbar-wrapper {
   display: flex;
+  justify-content: space-evenly;
+  width: 100%;
   align-items: center;
-  justify-content: space-between;
+}
+.search {
+  display: flex;
+
+  align-items: center;
 }
 
 .search-bar {
-  padding: 6px;
-  width: 50%;
+  padding: 1rem;
+  width: 70%;
   text-align: center;
-  margin-right: 25%;
+  margin-right: 10px;
   resize: none;
   outline: none;
 }
-
-.button {
+.icon-temp {
   display: flex;
-  justify-content: center;
+  align-items: center;
+}
+.apple {
+  display: flex;
+  align-items: center;
+  color: black;
 }
 
-.btn {
-  margin: 10px;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.767);
-  color: white;
-  border: 0px;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.btn:hover {
-  transform: scale(1.1);
+.icons {
+  width: 1rem;
+  padding-left: 5px;
+  color: black;
 }
