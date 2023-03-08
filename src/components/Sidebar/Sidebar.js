@@ -20,6 +20,7 @@ const Sidebar = () => {
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
         </div>
+
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="navbar-toggle">
@@ -27,6 +28,17 @@ const Sidebar = () => {
                 <AiIcons.AiOutlineClose />
               </Link>
             </li>
+
+            <FaIcons.FaSearch />
+            <input
+              className="search-bar"
+              placeholder="Enter Location"
+              type="text"
+              // value={location}
+              // onChange={(event) => setLocation(event.target.value)}
+              // onKeyPress={search}
+            />
+
             {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>

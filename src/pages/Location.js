@@ -5,7 +5,7 @@ import Forecast from "../components/forecast/Forecast";
 import Weather from "../components/weather/Weather";
 import Button from "../components/Button";
 
-const Location = (data, setData, forecast, setForecast) => {
+const Location = ({ data, setData, forecast, setForecast }) => {
   const [show, setShow] = useState(true);
   const [location, setLocation] = useState("");
 
@@ -30,7 +30,7 @@ const Location = (data, setData, forecast, setForecast) => {
   };
   return (
     <>
-      <div className="wrapper">
+      <div>
         <SearchBar
           location={location}
           setLocation={setLocation}

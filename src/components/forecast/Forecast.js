@@ -23,62 +23,66 @@ const Forecast = ({ data }) => {
   );
   return (
     <>
-      {data.list ? <label className="title">Daily Forecast</label> : null}
-      {data.list
-        ? data.list.slice(0, 7).map((item, idx) => (
-            <div className="daily-forecast">
-              <Accordion>
-                <AccordionSummary>
-                  <Typography className="weather-list">
-                    <img
-                      src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
-                      className="icon"
-                      alt="weather"
-                    />
-                    <label className="day">{forecastDays[idx]}</label>
-                    <label className="description">
-                      {item.weather[0].description}
-                    </label>
-                    <label className="min-max">
-                      {Math.round(item.main.temp_max)}°C /
-                      {Math.round(item.main.temp_min)}°C
-                    </label>
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    <div className="daily-details-grid">
-                      <div className="daily-details-item">
-                        <label>Pressure:</label>
-                        <label>{item.main.pressure}</label>
-                      </div>
-                      <div className="daily-details-item">
-                        <label>Humidity:</label>
-                        <label>{item.main.humidity}%</label>
-                      </div>
-                      <div className="daily-details-item">
-                        <label>Clouds:</label>
-                        <label>{item.clouds.all}%</label>
-                      </div>
-                      <div className="daily-details-item">
-                        <label>Wind speed:</label>
-                        <label>{item.wind.speed} m/s</label>
-                      </div>
-                      <div className="daily-details-item">
-                        <label>Sea level:</label>
-                        <label>{item.main.sea_level}m</label>
-                      </div>
-                      <div className="daily-details-item">
-                        <label>Feels like:</label>
-                        <label>{item.main.feels_like}°C</label>
-                      </div>
-                    </div>
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-            </div>
-          ))
-        : null}
+      <div className="container">
+        <div className="forecast">
+          {data.list ? <label className="title">Daily Forecast</label> : null}
+          {data.list
+            ? data.list.slice(0, 7).map((item, idx) => (
+                <div className="daily-forecast">
+                  <Accordion>
+                    <AccordionSummary>
+                      <Typography className="weather-list">
+                        <img
+                          src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
+                          className="icon"
+                          alt="weather"
+                        />
+                        <label className="day">{forecastDays[idx]}</label>
+                        <label className="description">
+                          {item.weather[0].description}
+                        </label>
+                        <label className="min-max">
+                          {Math.round(item.main.temp_max)}°C /
+                          {Math.round(item.main.temp_min)}°C
+                        </label>
+                      </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography>
+                        <div className="daily-details-grid">
+                          <div className="daily-details-item">
+                            <label>Pressure:</label>
+                            <label>{item.main.pressure}</label>
+                          </div>
+                          <div className="daily-details-item">
+                            <label>Humidity:</label>
+                            <label>{item.main.humidity}%</label>
+                          </div>
+                          <div className="daily-details-item">
+                            <label>Clouds:</label>
+                            <label>{item.clouds.all}%</label>
+                          </div>
+                          <div className="daily-details-item">
+                            <label>Wind speed:</label>
+                            <label>{item.wind.speed} m/s</label>
+                          </div>
+                          <div className="daily-details-item">
+                            <label>Sea level:</label>
+                            <label>{item.main.sea_level}m</label>
+                          </div>
+                          <div className="daily-details-item">
+                            <label>Feels like:</label>
+                            <label>{item.main.feels_like}°C</label>
+                          </div>
+                        </div>
+                      </Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                </div>
+              ))
+            : null}
+        </div>
+      </div>
     </>
   );
 };

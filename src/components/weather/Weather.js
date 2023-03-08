@@ -4,9 +4,9 @@ import "./weather.css";
 
 const Weather = ({ data }) => {
   return (
-    <>
-      {data.main ? <label className="title">Today's Weather</label> : null}
+    <div className="weather-container">
       <div className="weather-wrapper">
+        {data.main ? <label className="title">Today's Weather</label> : null}
         <div className="temperture">
           <h2>{data.name}</h2>
           {data.main ? (
@@ -46,7 +46,7 @@ const Weather = ({ data }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

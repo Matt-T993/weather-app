@@ -6,6 +6,7 @@
   min-height: 100vh;
   width: auto;
   display: flex;
+  flex-direction: column;
   background: url("./assets/background.png") no-repeat center center/cover;
 }
 
@@ -20,7 +21,7 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  justify-content: center;
 }
 
 @media only screen and (min-width: 960px) {
@@ -52,7 +53,7 @@
 
 .button {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .btn {

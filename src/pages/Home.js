@@ -1,10 +1,16 @@
 import React from "react";
+
 import CurrentLocation from "../components/CurrentLocation";
 
-const Home = () => {
+const Home = ({ data, setData, forecast, setForecast }) => {
   return (
     <div>
-      <CurrentLocation />
+      <CurrentLocation
+        data={data}
+        setData={setData}
+        forecast={forecast}
+        setForecast={setForecast}
+      />
     </div>
   );
 };
