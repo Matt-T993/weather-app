@@ -4,15 +4,18 @@ import { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import Weather from "./components/weather/Weather";
 import Forecast from "./components/forecast/Forecast";
+import Condition from "./components/weather/Condition";
 
 function App() {
   const [data, setData] = useState({});
   const [forecast, setForecast] = useState({});
+  const [hrForecast, setHrForecast] = useState({});
   const [location, setLocation] = useState("");
 
   // forecast and weather URL
   const currentWeatherUrl = `${process.env.REACT_APP_BASE}weather?q=${location}&units=metric&appid=${process.env.REACT_APP_KEY}`;
   const forcastWeatherUrl = `${process.env.REACT_APP_BASE}forecast?q=${location}&units=metric&appid=${process.env.REACT_APP_KEY}`;
+  const hourlyWeatherURL = `${process.env.REACT_APP_BASE}onecall?&exclude=daily,minutely,current,alerts&units=metric&appid=${process.env.REACT_APP_KEY}`;
 
   // get the currentweather and forecast of the location
   const searchLocation = (event) => {
@@ -25,7 +28,6 @@ function App() {
         setForecast(response.data);
         console.log("forecast", response.data);
       });
-
       setLocation("");
     }
   };
@@ -47,7 +49,9 @@ function App() {
         />
 
         <Weather data={data} />
-        {/* <Forecast data={forecast} /> */}
+        <Forecast data={forecast} />
+        <Forecast data={forecast} />
+        <Condition data={data} />
       </div>
     </div>
   );

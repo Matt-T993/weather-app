@@ -1,3 +1,4 @@
+/* weather.js */
 .title {
   margin-bottom: 20px;
   text-align: center;
@@ -15,7 +16,7 @@
   justify-content: center;
   background-color: white;
   align-items: center;
-  margin-top: 10px;
+  margin: 30px auto;
   background: rgb(
     204,
     204,
@@ -34,6 +35,8 @@
   font-size: 10vh;
 }
 
+/* condition.js */
+
 .bottom {
   display: flex;
   flex-direction: column;
@@ -41,14 +44,67 @@
 }
 
 .content-list {
-  column-gap: 15px;
+  column-gap: 10px;
+  row-gap: 10px;
   display: grid;
   grid-template-columns: auto auto;
+  margin: 0 auto;
 }
 
 .content {
   align-items: center;
   display: flex;
+  flex-direction: column;
   height: 30px;
-  justify-content: space-around;
+  justify-content: center;
+  padding: 3rem;
+  background-color: pink;
+  margin: 0 auto;
+  background: rgb(
+    204,
+    204,
+    204
+  ); /* Fallback for older browsers without RGBA-support */
+  background: rgba(204, 204, 204, 0.3);
+}
+.cIcon {
+  font-size: 2rem;
+}
+@media only screen and (min-width: 320px) {
+  .weather-wrapper {
+    width: 90%;
+  }
+  .content-list {
+    width: 100%;
+  }
+
+  .content {
+    width: 30%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .weather-wrapper {
+    width: 70%;
+  }
+  .content-list {
+    width: 70%;
+  }
+
+  .content {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .weather-wrapper {
+    width: 50%;
+  }
+  .content-list {
+    width: 50%;
+  }
+
+  .content {
+    width: 50%;
+  }
 }

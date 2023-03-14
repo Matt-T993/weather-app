@@ -1,9 +1,8 @@
 import React from "react";
-import Moment from "moment";
+
 import { BiSearch, BiCurrentLocation } from "react-icons/bi";
 import { RiCelsiusFill, RiFahrenheitFill } from "react-icons/ri";
 const SearchBar = ({ location, search, setLocation }) => {
-  // const formatDate = Moment().format("MMMM Do YYYY");
   return (
     <>
       <div className="searchbar-wrapper">

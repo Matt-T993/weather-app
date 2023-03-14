@@ -15,6 +15,7 @@ const CurrentLocation = () => {
   useEffect(() => {
     const CurrLocWeatherUrl = `${process.env.REACT_APP_BASE}weather?lat=${lat}&lon=${long}&units=metric&appid=${process.env.REACT_APP_KEY}`;
     const forcastWeatherUrl = `${process.env.REACT_APP_BASE}forecast?lat=${lat}&lon=${long}&units=metric&appid=${process.env.REACT_APP_KEY}`;
+
     const fetchData = async () => {
       navigator.geolocation.getCurrentPosition(function (position) {
         setLat(position.coords.latitude);

@@ -1,53 +1,48 @@
 .forecast {
-  width: 50%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
 }
+
 .daily-forecast {
-  margin-bottom: 20px;
-}
-
-.weather-list {
-  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  flex-direction: column;
+  font-size: 10px;
 }
-
-.title {
-  font-size: 23px;
-  font-weight: 700;
-}
-
 .icon {
-  width: 40px;
+  width: 2rem;
 }
-
-.day {
-  cursor: inherit;
-  color: #212121;
-  font-weight: 600;
-  margin-left: 15px;
-}
-
-.description {
-  cursor: inherit;
-  flex: 1 1;
-  margin-right: 15px;
-  text-align: right;
-}
-
-.min-max {
-  color: #757575;
-}
-
-.daily-details-grid {
-  column-gap: 15px;
+.grid-forecast {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(6, 1fr);
 }
 
-.daily-details-item {
-  align-items: center;
-  display: flex;
-  height: 30px;
-  justify-content: space-between;
+@media only screen and (min-width: 720px) {
+  .forecast {
+    width: 60%;
+  }
+  .icon {
+    width: 3.5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .forecast {
+    width: 70%;
+  }
+  .icon {
+    width: 4rem;
+  }
+  .daily-forecast {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .forecast {
+    width: 50%;
+  }
 }
