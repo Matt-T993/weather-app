@@ -50,7 +50,6 @@ function App() {
 
         <Weather data={data} />
         <Forecast data={forecast} />
-        <Forecast data={forecast} />
         <Condition data={data} />
       </div>
     </div>
