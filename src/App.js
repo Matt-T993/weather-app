@@ -9,13 +9,13 @@ import Condition from "./components/weather/Condition";
 function App() {
   const [data, setData] = useState({});
   const [forecast, setForecast] = useState({});
-  const [hrForecast, setHrForecast] = useState({});
+  // const [hrForecast, setHrForecast] = useState({});
   const [location, setLocation] = useState("");
 
   // forecast and weather URL
   const currentWeatherUrl = `${process.env.REACT_APP_BASE}weather?q=${location}&units=metric&appid=${process.env.REACT_APP_KEY}`;
   const forcastWeatherUrl = `${process.env.REACT_APP_BASE}forecast?q=${location}&units=metric&appid=${process.env.REACT_APP_KEY}`;
-  const hourlyWeatherURL = `${process.env.REACT_APP_BASE}onecall?&exclude=daily,minutely,current,alerts&units=metric&appid=${process.env.REACT_APP_KEY}`;
+  // const hourlyWeatherURL = `${process.env.REACT_APP_BASE}onecall?&exclude=daily,minutely,current,alerts&units=metric&appid=${process.env.REACT_APP_KEY}`;
 
   // get the currentweather and forecast of the location
   const searchLocation = (event) => {
