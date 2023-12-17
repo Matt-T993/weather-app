@@ -5,52 +5,70 @@ import { BsFillCloudsFill, BsSunset } from "react-icons/bs";
 
 const Condition = ({ data }) => {
   return (
+    
     <div
       className={typeof data.main != "undefined" ? "condition-wrapper" : null}
     >
-      <div className="bottom">
+     <p>Conditions</p>
         <div className="content-list">
           {data.main ? (
             <div className="content">
-              <label>
+            
+              <p>
                 <WiHumidity className="cIcon" />
-              </label>
-              <label>Humidity</label>
-              <label>{data.main.humidity}%</label>
+              </p>
+              <div className="text">
+              <p>Humidity</p>
+            
+              <p className="desc">{data.main.humidity}%</p>
+              </div>
             </div>
           ) : null}
 
           {data.wind ? (
             <div className="content">
-              <label>
+          
+              <p>
                 <WiStrongWind className="cIcon" />
-              </label>
-              <label>Wind</label>
-              <label>{data.wind.speed.toFixed()}m/s</label>
+              </p>
+              <div className="text">
+              <p>Wind</p>
+             
+              <p className="desc">{data.wind.speed.toFixed()}m/s</p>
+              </div>
             </div>
           ) : null}
 
           {data.clouds ? (
             <div className="content">
-              <label>
+            
+              <p>
                 <BsFillCloudsFill className="cIcon" />
-              </label>
-              <label>Clouds</label>
-              <label>{data.clouds.all}%</label>
+              </p>
+              <div className="text">
+              <p>Clouds</p>
+           
+              <p className="desc">{data.clouds.all}%</p>
+              </div>
             </div>
           ) : null}
 
           {data.main ? (
             <div className="content">
-              <label>
+                
+              <p>
                 <BsSunset className="cIcon" />
-              </label>
-              <label>Pressure: {data.main.pressure}</label>
+              </p>
+              <div className="text">
+              <p>Pressure</p>
+           
+              <p className="desc">{data.main.pressure}</p>
+              </div>
             </div>
           ) : null}
         </div>
       </div>
-    </div>
+
   );
 };
 

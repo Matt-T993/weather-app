@@ -1,0 +1,25 @@
+.hourly{
+    border-radius: 20px;
+    background: rgb(131,130,148);
+    background: linear-gradient(0deg, rgba(131,130,148,1) 100%, rgba(106,106,106,0) 100%, rgba(0,212,255,1) 100%);
+    padding: 20px;
+}
+.grid-hourly{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    font-size: 12px;
+    padding: 10px 20px 20px 20px;
+    color: #fff;
+}
+
+.daily-hourly{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hourly-icon {
+    width: 100px;
+  }

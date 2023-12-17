@@ -1,110 +1,90 @@
 /* weather.js */
-.title {
-  margin-bottom: 20px;
-  text-align: center;
+.weather-wrapper{
+  margin-left: 100px;
 }
-
-@media only screen and (min-width: 1024px) {
-  .title {
-    text-align: left;
-  }
+.weather{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
 }
-
-.weather-wrapper {
+.weather-left{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background-color: white;
-  align-items: center;
-  margin: 30px auto;
-  background: rgb(
-    204,
-    204,
-    204
-  ); /* Fallback for older browsers without RGBA-support */
-  background: rgba(204, 204, 204, 0.3);
+  justify-content: space-between; 
 }
 
-.temperture {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.weather-name{
+  margin: 40px; 
 }
 
+.weather-temp{
+  margin: 40px;
+}
+
+.weather-type{
+  font-size: 32px;
+}
+.desc{
+  font-size: 32px;
+ 
+}
 .temp {
-  font-size: 10vh;
+  font-size: 42px;
+ 
 }
 
-/* condition.js */
-
-.bottom {
+.weather-right{
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.weather-icon{
+  width: 200px;
+}
+
+.weather-type{
+  position: relative;
+  bottom: 30px;
+}
+
+/* Condition */
+.condition-wrapper {
+  position: relative; 
+  border-radius: 20px;
+  background: rgb(131,130,148);
+  background: linear-gradient(0deg, rgba(131,130,148,1) 100%, rgba(106,106,106,0) 100%, rgba(0,212,255,1) 100%);
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
 
 .content-list {
-  column-gap: 10px;
-  row-gap: 10px;
+  margin-left: 20px;
+  row-gap: 20px;
+  width: 80%;
   display: grid;
-  grid-template-columns: auto auto;
-  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+
 }
 
 .content {
-  align-items: center;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.cIcon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.text {
   display: flex;
   flex-direction: column;
-  height: 30px;
-  justify-content: center;
-  padding: 3rem;
-  background-color: pink;
-  margin: 0 auto;
-  background: rgb(
-    204,
-    204,
-    204
-  ); /* Fallback for older browsers without RGBA-support */
-  background: rgba(204, 204, 204, 0.3);
-}
-.cIcon {
-  font-size: 2rem;
-}
-@media only screen and (min-width: 320px) {
-  .weather-wrapper {
-    width: 90%;
-  }
-  .content-list {
-    width: 100%;
-  }
-
-  .content {
-    width: 30%;
-  }
 }
 
-@media only screen and (min-width: 768px) {
-  .weather-wrapper {
-    width: 70%;
-  }
-  .content-list {
-    width: 70%;
-  }
 
-  .content {
-    width: 50%;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .weather-wrapper {
-    width: 50%;
-  }
-  .content-list {
-    width: 50%;
-  }
-
-  .content {
-    width: 50%;
-  }
-}

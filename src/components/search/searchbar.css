@@ -1,0 +1,21 @@
+/* SearchBar.css */
+
+
+.search {
+    position: relative;
+    
+}
+
+.search-bar {
+
+    background: rgb(131,130,148);
+    background: linear-gradient(0deg, rgba(131,130,148,1) 100%, rgba(106,106,106,0) 100%, rgba(0,212,255,1) 100%);
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    transition: border-color 0.3s ease-in-out;
+  
+}
+
+

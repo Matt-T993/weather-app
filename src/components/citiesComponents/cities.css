@@ -1,0 +1,135 @@
+.city{
+    
+
+}
+.city-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: rgb(131,130,148);
+    background: linear-gradient(0deg, rgba(131,130,148,1) 100%, rgba(106,106,106,0) 100%, rgba(0,212,255,1) 100%);
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.city-content:hover{
+  background: none;
+
+}
+
+.city-left{
+    display: flex;
+    align-items: center;
+
+}
+
+.city-name{
+    margin: 20px;
+}
+
+.city-temp{
+    margin: 20px;
+}
+
+/* city content weather */
+.cityContent-weather{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+  }
+  .cityContent-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+  }
+  
+  .cityContent-name{
+    margin: 40px; 
+  }
+  
+  .cityContent-temp{
+    margin: 40px;
+  }
+  
+  .cityContent-type{
+    font-size: 32px;
+  }
+
+  .cityContent-right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 40px;
+  }
+  
+  .weather-icon{
+    width: 200px;
+  }
+  
+  .cityContent-type{
+    position: relative;
+    bottom: 30px;
+  }
+
+  /* city forecase content */
+  .cityContent-forecast{
+    margin: 20px;
+  }
+  
+  .cityContent-daily-forecast {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    font-size: 12px;
+    color: #fff;
+
+    /* transition: transform 0.3s ease; */
+  }
+  
+  .cityContent-forecast-center{
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    width: 80px;
+  }
+  
+  .cityContent-grid-forecast {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* city hourly content */
+
+  .cityContent-hourly{
+    border-radius: 20px;
+    background: rgb(131,130,148);
+    background: linear-gradient(0deg, rgba(131,130,148,1) 100%, rgba(106,106,106,0) 100%, rgba(0,212,255,1) 100%);
+    padding: 20px;
+}
+.cityContent-grid-hourly{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    font-size: 12px;
+    padding: 10px 20px 20px 20px;
+    color: #fff;
+}
+
+.cityContent-daily-hourly{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hourly-icon {
+    width: 100px;
+  }
+
+  
+  
