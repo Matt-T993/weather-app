@@ -89,7 +89,8 @@
 .pressure-selection.selected,
 .precip-selection.selected,
 .distance-selection.selected {
-  background-color: #4CAF50; /* Green color for selected items */
+  background: rgb(131, 130, 148);
+  background: linear-gradient(0deg, rgba(131, 130, 148, 1) 100%, rgba(106, 106, 106, 0) 100%, rgba(0, 212, 255, 1) 100%);
 
 }
 
