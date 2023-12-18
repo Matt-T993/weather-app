@@ -21,10 +21,10 @@ function App() {
 
 
   // forecast and weather URL
-  const currentWeatherUrl = `${process.env.REACT_APP_WEATHER_BASE}?key=${process.env.REACT_APP_WEATHER_KEY}&q=${location}&aqi=yes`
+  const currentWeatherUrl = `https://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHER_KEY}&q=${location}&aqi=yes`
   // const currentWeatherUrl2 = `${process.env.REACT_APP_BASE}weather?q=${location}&units=metric&appid=${process.env.REACT_APP_KEY}`;
   const forcastWeatherUrl = `${process.env.REACT_APP_BASE}forecast?q=${location}&units=metric&appid=${process.env.REACT_APP_KEY}`;
-  const hourlyWeatherUrl = `${process.env.REACT_APP_WEATHER_BASE}?key=${process.env.REACT_APP_WEATHER_KEY}&q=${location}&days=1&aqi=yes&alerts=no`
+  const hourlyWeatherUrl = `https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_WEATHER_KEY}&q=${location}&days=1&aqi=yes&alerts=no`
  
   const getCurrentWeather = async () => {
     try {
