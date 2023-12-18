@@ -1,43 +1,43 @@
-import React from "react";
-import "./weather.css";
-
-
-const Weather = ({ data }) => {
+const Weather = ({ data, changeTempType }) => {
   const capitaliseFirstLetter = (str) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
   };
 
   return (
-    
-      <div
-        className={typeof data.main != "undefined" ? "weather-wrapper" : null}
-      >
-        <div className="weather">
-          <div className="weather-left">
-            <div className="weather-name">
-        <h2 className="desc name">{data.name}</h2>
-        <p>Chance of rain: 0%</p>
-        </div>
+    <div className={data.location ? "weather-wrapper" : null}>
+      <div className="weather">
+        <div className="weather-left">
+          <div className="weather-name">
+            {data.location ? (
+              <>
+                <h2 className="desc name">{data.location.name}</h2>
+                <p>Chance of rain: 0%</p>
+              </>
+            ) : null}
+          </div>
 
-        <div className="weather-temp">
-          {data.main ? (
-            <h1 className="temp">{data.main.temp.toFixed()}°C</h1>
-          ) : null}
-        </div>
-        </div>
-        <div className="weather-right">
-        {data.weather ? (
-            <img
-              alt="weather"
-              className="weather-icon"
-              src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
-            />
-          ) : null}
-            {data.weather ? <p className="desc weather-type">{capitaliseFirstLetter(data.weather[0].main)}</p> : null}
+          <div className="weather-temp">
+            {data.current ? (
+              <h1 className="temp">{changeTempType()}</h1>
+            ) : null}
           </div>
         </div>
+        <div className="weather-right">
+          {data.current ? (
+            <>
+              <img
+                alt="weather"
+                className="weather-icon"
+                src={data.current.condition.icon}
+              />
+              <p className="desc weather-type">
+                {capitaliseFirstLetter(data.current.condition.text)}
+              </p>
+            </>
+          ) : null}
+        </div>
       </div>
-    
+    </div>
   );
 };
 

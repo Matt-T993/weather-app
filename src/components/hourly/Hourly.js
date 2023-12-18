@@ -1,7 +1,7 @@
 import React from "react";
 import './hourly.css';
 
-const Hourly = ({ hourly }) => {
+const Hourly = ({ hourly, changeTempType }) => {
   const forecastday = hourly?.forecast?.forecastday;
 
   return (
@@ -22,7 +22,7 @@ const Hourly = ({ hourly }) => {
                     alt="weather"
                   />
                   <p>
-                    {Math.round(item.temp_c)}°C
+                    {changeTempType(item.temp_c)}
                   </p>
                 </div>
               );

@@ -3,29 +3,35 @@ import "./weather.css";
 import { WiHumidity, WiStrongWind } from "react-icons/wi";
 import { BsFillCloudsFill, BsSunset } from "react-icons/bs";
 
-const Condition = ({ data }) => {
+const Condition = ({
+  data, 
+  changeSpeedType,
+  changePrecipType,
+  changePressureType,
+  changeDistanceType,
+}) => {
   return (
     
     <div
-      className={typeof data.main != "undefined" ? "condition-wrapper" : null}
+      className={typeof data.current != "undefined" ? "condition-wrapper" : null}
     >
      <p>Conditions</p>
         <div className="content-list">
-          {data.main ? (
+          {data.current ? (
             <div className="content">
             
               <p>
                 <WiHumidity className="cIcon" />
               </p>
               <div className="text">
-              <p>Humidity</p>
+              <p>Precipitation</p>
             
-              <p className="desc">{data.main.humidity}%</p>
+              <p className="desc">{changePrecipType()}</p>
               </div>
             </div>
           ) : null}
 
-          {data.wind ? (
+          {data.current ? (
             <div className="content">
           
               <p>
@@ -34,12 +40,12 @@ const Condition = ({ data }) => {
               <div className="text">
               <p>Wind</p>
              
-              <p className="desc">{data.wind.speed.toFixed()}m/s</p>
+              <p className="desc">{changeSpeedType()}</p>
               </div>
             </div>
           ) : null}
 
-          {data.clouds ? (
+          {data.current ? (
             <div className="content">
             
               <p>
@@ -48,12 +54,12 @@ const Condition = ({ data }) => {
               <div className="text">
               <p>Clouds</p>
            
-              <p className="desc">{data.clouds.all}%</p>
+              <p className="desc">{data.current.cloud}%</p>
               </div>
             </div>
           ) : null}
 
-          {data.main ? (
+          {data.current ? (
             <div className="content">
                 
               <p>
@@ -62,7 +68,7 @@ const Condition = ({ data }) => {
               <div className="text">
               <p>Pressure</p>
            
-              <p className="desc">{data.main.pressure}</p>
+              <p className="desc">{changePressureType()}</p>
               </div>
             </div>
           ) : null}

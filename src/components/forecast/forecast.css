@@ -17,16 +17,16 @@
   display: flex;
   align-items: center;
 }
-
-.icon {
-  width: 80px;
-}
-
 .grid-forecast {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
- 
+}
+
+@media screen and (max-width: 1200px) {
+  
+    
+  
 
 }
 

@@ -13,15 +13,16 @@ function App() {
   const [hourly, setHourly] = useState({});
   const [location, setLocation] = useState("sydney");
   const[selectedTemp, setSelectedTemp] = useState('Celcius')
-  const[selectedSpeed, setSelectedSpeed] = useState('km/h')
-  const[selectedPressure, setSelectedPressure] = useState('hPA')
+  const[selectedSpeed, setSelectedSpeed] = useState('m/s')
+  const[selectedPressure, setSelectedPressure] = useState('hPa')
   const[selectedPrecip, setSelectedPrecip] = useState('Milimeters')
   const[selectedDistance, setSelectedDistance] = useState('Kilometers')
 
 
 
   // forecast and weather URL
-  const currentWeatherUrl = `${process.env.REACT_APP_BASE}weather?q=${location}&units=metric&appid=${process.env.REACT_APP_KEY}`;
+  const currentWeatherUrl = `${process.env.REACT_APP_WEATHER_BASE}?key=${process.env.REACT_APP_WEATHER_KEY}&q=${location}&aqi=yes`
+  // const currentWeatherUrl2 = `${process.env.REACT_APP_BASE}weather?q=${location}&units=metric&appid=${process.env.REACT_APP_KEY}`;
   const forcastWeatherUrl = `${process.env.REACT_APP_BASE}forecast?q=${location}&units=metric&appid=${process.env.REACT_APP_KEY}`;
   const hourlyWeatherUrl = `${process.env.REACT_APP_WEATHER_BASE}?key=${process.env.REACT_APP_WEATHER_KEY}&q=${location}&days=1&aqi=yes&alerts=no`
  
@@ -34,6 +35,9 @@ function App() {
       console.error('Error fetching current weather:', error);
     }
   };
+
+
+
 
   const getForecastWeather = async () => {
     try {
@@ -54,6 +58,9 @@ function App() {
   }
 
 
+
+
+
   useEffect(() => {
     getCurrentWeather();
     getForecastWeather();
@@ -62,12 +69,33 @@ function App() {
    
   }, [location]); 
 
-  console.log(data);
+  const changeTempType = () => {
+    if (selectedTemp === 'Celcius') {
+      return data.current.temp_c.toFixed() + "°C";
+    } else if (selectedTemp === 'Fahrenheit') {
+      return data.current.temp_f.toFixed() + "°F";
+    }
+  };
+  
+  const changeTempTypeMax = (value) => {
 
-const tempertureSelected = (temp) => {
+    if (selectedTemp === 'Celcius') {
+      return value.toFixed();
+    } else if (selectedTemp === 'Fahrenheit') {
+      return ((value * 9/5) + 32).toFixed();
+    }
+  };
+  
+  const changeTempTypeMin = (value) => {
+    if (selectedTemp === 'Celcius') {
 
-}
+      return value.toFixed();
 
+    } else if (selectedTemp === 'Fahrenheit') {
+      return ((value * 9/5) + 32).toFixed();
+    }
+  };
+  
 
 
 
@@ -79,16 +107,30 @@ const tempertureSelected = (temp) => {
       <Sidebar/>
       </div>
       <Routes>
-        <Route exact path="/" element={<Home location={location} 
+        <Route exact path="/" element={<Home 
+        location={location} 
+        setLocation={setLocation}
         hourly={hourly} 
         data={data} 
         forecast={forecast} 
+        changeTempType={changeTempType}
+        changeTempTypeMax={changeTempTypeMax}
+        changeTempTypeMin={changeTempTypeMin}
+        selectedDistance={selectedDistance}
+        selectedPrecip={selectedPrecip}
+        selectedPressure={selectedPressure}
+        selectedSpeed={selectedSpeed}
+      
+
          />} />
         <Route exact path="/cities" element={<Cities location={location} 
         hourly={hourly} 
         data={data} 
         forecast={forecast} 
         setLocation={setLocation}
+        changeTempType={changeTempType}
+        changeTempTypeMax={changeTempTypeMax}
+        changeTempTypeMin={changeTempTypeMin}
         />} />
         <Route exact path="/setting" element={<Setting
         selectedTemp={selectedTemp}

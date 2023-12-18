@@ -5,7 +5,9 @@ import CityWeather from '../components/citiesComponents/CityWeather'; // Import 
 import CityContent from '../components/citiesComponents/CityContent';
 
 
-const Cities = ({ hourly, data, forecast, location, setLocation  }) => {
+const Cities = ({ hourly, data, forecast, location, setLocation,  changeTempType,
+  changeTempTypeMin,
+  changeTempTypeMax,  }) => {
   const citiesData = [
     { name: "New York", country: "USA" },
     { name: "London", country: "UK" },
@@ -27,7 +29,13 @@ const Cities = ({ hourly, data, forecast, location, setLocation  }) => {
         </div>
       </div>
       <div className='right'>
-          <CityContent  hourly={hourly} data={data} forecast={forecast}/>
+          <CityContent  
+          hourly={hourly} 
+          data={data} 
+          forecast={forecast}    
+          changeTempType={changeTempType}
+          changeTempTypeMax={changeTempTypeMax}
+          changeTempTypeMin={changeTempTypeMin}/>
       </div>
      
     </>

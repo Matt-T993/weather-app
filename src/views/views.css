@@ -32,8 +32,8 @@
   margin-top: 50px;
  }
 
- /*setting view */
- .setting-center{
+/* Setting view */
+.setting-center {
   opacity: 0.6;
   display: flex;
   flex-direction: column;
@@ -42,64 +42,73 @@
   border-radius: 20px;
 }
 
-.settings-wrapper{
+.settings-wrapper {
   opacity: 0.6;
-  background: rgb(131,130,148);
-  background: linear-gradient(0deg, rgba(131,130,148,1) 100%, rgba(106,106,106,0) 100%, rgba(0,212,255,1) 100%);
+  background: rgb(131, 130, 148);
+  background: linear-gradient(0deg, rgba(131, 130, 148, 1) 100%, rgba(106, 106, 106, 0) 100%, rgba(0, 212, 255, 1) 100%);
   width: 100%;
-  
   border-radius: 20px;
-
 }
 
-.title{
-  margin: 20px
-}
-.sub-title{
-  margin-left: 20px
+.title {
+  margin: 20px;
 }
 
-.settings{
+.sub-title {
+  margin-left: 20px;
+}
+
+.settings {
   display: flex;
   flex-direction: column;
   margin: 20px;
 }
 
-.setting{
+.setting {
   display: flex;
-  margin:  20px;
+  margin: 20px;
   border-radius: 10px;
   padding: 3px;
-  background: rgb(22,21,45);
-  background: linear-gradient(0deg, rgba(22,21,45,1) 100%, rgba(106,106,106,0) 100%, rgba(0,212,255,1) 100%);
-  
+  background: rgb(22, 21, 45);
+  background: linear-gradient(0deg, rgba(22, 21, 45, 1) 100%, rgba(106, 106, 106, 0) 100%, rgba(0, 212, 255, 1) 100%);
 }
 
-.temp-selection{
+.temp-selection,
+.wind-selection,
+.pressure-selection,
+.precip-selection,
+.distance-selection {
   width: 50%;
   text-align: center;
   padding: 10px;
   border-radius: 10px;
 }
 
-.wind-selection{
-  width: 33%;
-  text-align: center;
-  padding: 10px;
-  border-radius: 10px;
-  background: rgb(22,21,45);
-  background: linear-gradient(0deg, rgba(22,21,45,1) 100%, rgba(106,106,106,0) 100%, rgba(0,212,255,1) 100%);
- 
+.temp-selection.selected,
+.wind-selection.selected,
+.pressure-selection.selected,
+.precip-selection.selected,
+.distance-selection.selected {
+  background-color: #4CAF50; /* Green color for selected items */
+
 }
-.pressure-selection{
-  width: 25%;
-  text-align: center;
-  padding: 10px;
-  border-radius: 10px;
-  background: rgb(22,21,45);
-  background: linear-gradient(0deg, rgba(22,21,45,1) 100%, rgba(106,106,106,0) 100%, rgba(0,212,255,1) 100%);
- 
+
+.temp-selection:hover,
+.wind-selection:hover,
+.pressure-selection:hover,
+.precip-selection:hover,
+.distance-selection:hover {
+  cursor: pointer; 
+  background-color: #555; 
 }
+
+
+
+
+
+
+
+
 
 
 

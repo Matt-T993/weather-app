@@ -15,7 +15,7 @@
 .sidebar-logo:hover {
   color: #bcbcbc;
 }
-.sidebar-logo .icon{
+.sidebar-logo {
   font-size: 32px;
 
 }
@@ -34,7 +34,7 @@
   }
 
 
-  .icon {
+  .sidebar-icon {
     font-size: 32px;
     margin-bottom: 10px;
   }

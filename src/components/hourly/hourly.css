@@ -20,6 +20,29 @@
     align-items: center;
 }
 
-.hourly-icon {
-    width: 100px;
+.hourly-icon{
+   width: 90px;
+}
+
+  @media screen and (max-width: 1200px) {
+    .grid-hourly{
+        padding: 10px 0px 20px 0px;
+    }
+    .hourly-icon{
+        width: 60px;
+     }
+  
+
   }
+
+  @media screen and (max-width: 1024px) {
+    .grid-hourly{
+        padding: 10px 0px 20px 0px;
+    }
+    .hourly-icon{
+        width: 40px;
+     }
+  
+
+  }
+
