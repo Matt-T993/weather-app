@@ -33,10 +33,28 @@ The Weather App is a simple application that provides current weather informatio
 Before running the app, ensure you have replaced the placeholder YOUR_API_KEY with your actual Weather API key in the code located in the service.js file
 
 ## Usage
-1. Enter the desired location in the search bar.
-2.View the current weather, 24 hour forecast and 7 day forcast.
-3.Check inforamation about the conditions.
-4.Change the Settings
+
+Follow these steps to use the Weather App:
+
+1. **Enter Location:**
+   - Open the app and locate the search bar.
+   - Enter the desired location for which you want to check the weather.
+
+2. **View Weather Information:**
+   - Once you've entered the location, the app will display the following details:
+     - Current weather
+     - 24-hour forecast
+     - 7-day forecast
+
+3. **Check Conditions:**
+   - Explore detailed information about the weather conditions, including temperature, humidity, wind, and more.
+
+4. **Change Settings:**
+   - Customize your experience by changing app settings.
+   - Adjust preferences such as units (e.g., Celsius or Fahrenheit) or language settings.
+
+Feel free to explore the features of the app and tailor the settings to suit your preferences!
+
 
 ## License
 This Weather App is licensed under the MIT License - see the LICENSE file for details.
