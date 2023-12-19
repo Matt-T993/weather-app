@@ -23,6 +23,7 @@ The Weather App is a simple application that provides current weather informatio
 1. Clone the repository:
 
    ```bash
+   https://github.com/Matt-T993/weather-app.git
 
 2. cd weather-app
    npm install
