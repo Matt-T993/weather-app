@@ -26,15 +26,15 @@ The Weather App is a simple application that provides current weather informatio
    https://github.com/Matt-T993/weather-app.git
 
 2. cd weather-app
-   npm install
+   <br>npm install<br>
    npm start
 
 ## Configuation
 Before running the app, ensure you have replaced the placeholder YOUR_API_KEY with your actual Weather API key in the code located in the service.js file
 
 ## Usage
-1.Enter the desired location in the search bar.
-2.View the current weather, 24 hour forecast and 7 day forcast .
+1. Enter the desired location in the search bar.
+2.View the current weather, 24 hour forecast and 7 day forcast.
 3.Check inforamation about the conditions.
 4.Change the Settings
 
